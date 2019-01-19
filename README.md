@@ -1,3 +1,10 @@
+This is the UI for the Hilton Reservation Demo
+
+To run the application
+1.  run 'ng serve' and navigate to `http://localhost:4200/`
+
+To test the second api, navigate to `http://localhost:4200/hotels`
+
 # HiltonReservationUI
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 7.2.2.
