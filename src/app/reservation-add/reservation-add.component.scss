@@ -1,0 +1,28 @@
+.align-center {
+  text-align: center;
+}
+
+.pull-right {
+  float: right;
+}
+.padding-left-and-right {
+  padding-left: 30px;
+  padding-right: 26px;
+}
+
+@media (max-width: 500px) {
+  .padding-left-and-right {
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+}
+
+legend {
+  font-weight: 300;
+  font-size: 35px;
+  padding-bottom: 30px;
+}
+
+.paddingLeft {
+  margin-left: 5px;
+}

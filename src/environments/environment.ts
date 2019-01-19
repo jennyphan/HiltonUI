@@ -3,7 +3,9 @@
 // The list of file replacements can be found in `angular.json`.
 
 export const environment = {
-  production: false
+  production: false,
+  hotelAPI: 'http://localhost:8083/graphql',
+  reservationAPI: 'http://localhost:8082/graphql'
 };
 
 /*

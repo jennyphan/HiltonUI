@@ -1,0 +1,133 @@
+<div class="row">
+  <div class="col-sm-12 col-md-4"><hr /></div>
+  <div class="col-sm-12 col-md-4 align-center">
+    <legend>Create Reservation</legend>
+  </div>
+  <div class="col-sm-12 col-md-4"><hr /></div>
+</div>
+<div class="row padding-left-and-right">
+  <div class="col-xs-12 col-md-5 "><app-alert></app-alert></div>
+</div>
+<div class="row padding-left-and-right">
+  <div class="col-xs-12 col-md-7 order-sm-5 mb-3"></div>
+  <div class="col-xs-12 col-md-7 ">
+    <form
+      [formGroup]="reservationForm"
+      #formReservation="ngForm"
+      novalidate
+      class="form-horizontal"
+    >
+      <fieldset>
+        <div class="page-content">
+          <div class="row ">
+            <div class="col-sm-12 ">
+              <div
+                class="form-group"
+                [ngClass]="{
+                  'has-error': name.invalid && name.dirty
+                }"
+              >
+                <p class="legend pull-right">
+                  <sup><span class="fa fa-asterisk font-asterisk"></span></sup
+                  >Required field
+                </p>
+                <label for="inputname" class="center-block">Name</label>
+                <sup> <span class="fa fa-asterisk font-asterisk"></span> </sup>
+                <input
+                  type="text"
+                  class="form-control"
+                  formControlName="name"
+                  placeholder="Name"
+                  required
+                />
+                <div
+                  *ngIf="formReservation.submitted && name.invalid"
+                  class="text-danger"
+                >
+                  name required
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="col-sm-12 ">
+              <div class="form-group">
+                <label for="inputhotelName" class="center-block"
+                  >Hotel Name</label
+                >
+                <sup> <span class="fa fa-asterisk font-asterisk"></span> </sup>
+                <input
+                  type="text"
+                  class="form-control"
+                  formControlName="hotelName"
+                  placeholder="Hotel Name"
+                />
+                <div
+                  *ngIf="formReservation.submitted && hotelName.invalid"
+                  class="text-danger"
+                >
+                  hotel name required
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="col-sm-12 ">
+              <div class="form-group">
+                <label for="inputEmail" class="center-block"
+                  >Check In/Out Dates</label
+                >
+                <sup> <span class="fa fa-asterisk font-asterisk"></span> </sup>
+
+                <input
+                  type="text"
+                  placeholder="Check In/Out Dates"
+                  class="form-control"
+                  formControlName="range"
+                  bsDaterangepicker
+                  [minDate]="minDate"
+                />
+              </div>
+              <div
+                *ngIf="range.dirty && range.invalid"
+                class="text-danger form-text"
+              >
+                invalid range
+              </div>
+              <div
+                *ngIf="formReservation.submitted && range.invalid"
+                class="text-danger form-text"
+              >
+                check in and check out date required
+              </div>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="col-sm-12 ">
+              <div class="form-group">
+                <button
+                  type="reset"
+                  class="btn btn-default float-right paddingLeft"
+                  (click)="(clearForm)"
+                >
+                  Clear
+                </button>
+                <button
+                  type="submit"
+                  [disabled]="reservationForm.invalid"
+                  class="btn btn-primary float-right"
+                  (click)="createReservation()"
+                >
+                  Submit
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </fieldset>
+    </form>
+  </div>
+</div>
