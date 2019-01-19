@@ -25,7 +25,8 @@ export class ReservationsComponent implements OnInit {
     this.apollo
       .use(APIS.RESERVATIONAPI)
       .watchQuery<QueryReservations>({
-        query: this.reservationService.reservationsQuery
+        query: this.reservationService.reservationsQuery,
+        fetchPolicy: 'network-only'
       })
       .valueChanges.pipe(map(result => result.data.reservations))
       .subscribe(data => {

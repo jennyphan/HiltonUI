@@ -29,7 +29,6 @@ import { APIS } from './shared/constants';
 export class AppModule {
   constructor(apollo: Apollo, httpLink: HttpLink) {
     // Reservations API
-
     apollo.create(
       {
         link: httpLink.create({ uri: environment.reservationAPI }),

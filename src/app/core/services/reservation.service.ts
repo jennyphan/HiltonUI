@@ -10,6 +10,7 @@ export class ReservationService {
   addReservationQuery = gql`
     mutation addReservation($input: ReservationInput!) {
       addReservation(input: $input) {
+        id
         name
         hotelName
         arrivalDate

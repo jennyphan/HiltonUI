@@ -35,7 +35,7 @@ export class ReservationDetailComponent implements OnInit {
         variables: {
           id: this.reservationId
         },
-        fetchPolicy: 'network-only'
+        fetchPolicy: 'cache-first'
       })
       .valueChanges.pipe(map((result: any) => result.data.reservation))
       .subscribe(data => {
